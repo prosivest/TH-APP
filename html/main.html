@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav " style="padding-top:10px;">顶部导航栏</header>
+
+    <!-- 轮播效果 -->
+    <!-- <div class="aui-slide-page-wrap"></div> -->
+    <div id="aui-slide3">
+        <div class="aui-slide-wrap">
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/11.png" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/12.png" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/13.png" />
+            </div>
+        </div>
+        <div class="aui-slide-page-wrap" style="text-align: center;">
+            <span class="aui-slide-page aui-slide-page-dot aui-slide-page-active"></span>
+            <span class="aui-slide-page aui-slide-page-dot"></span>
+            <span class="aui-slide-page aui-slide-page-dot"></span>
+        </div>
+        <!-- <div class="aui-slide-page-wrap"></div> -->
+    </div>
+    <!-- 轮播效果 -->
+    <!-- 宫格布局 -->
+    <section class="aui-grid">
+        <div class="aui-row">
+            <div tapmode="active" onclick="fnOpenFrame()" class="aui-col-xs-4">
+
+                <i class="aui-iconfont aui-icon-home"></i>
+                <div class="aui-grid-label">首页</div>
+            </div>
+            <div tapmode="active" onclick="fnOpensearch()" class="aui-col-xs-4">
+                <i class="aui-iconfont aui-icon-search"></i>
+                <div class="aui-grid-label">搜索</div>
+            </div>
+            <div class="aui-col-xs-4">
+                <i class="aui-iconfont aui-icon-map"></i>
+                <div class="aui-grid-label">地图</div>
+            </div>
+            <div class="aui-col-xs-4">
+                <i class="aui-iconfont aui-icon-calendar"></i>
+                <div class="aui-grid-label">日历</div>
+            </div>
+            <div class="aui-col-xs-4">
+
+                <i class="aui-iconfont aui-icon-date"></i>
+                <div class="aui-grid-label">日期</div>
+            </div>
+            <div tapmode="active" onclick="fnOpenarticle()" class="aui-col-xs-4">
+
+                <i class="aui-iconfont aui-icon-menu"></i>
+                <div class="aui-grid-label">信息</div>
+            </div>
+            <div class="aui-col-xs-4">
+                <i class="aui-iconfont aui-icon-calendar"></i>
+                <div class="aui-grid-label">日历</div>
+            </div>
+            <div tapmode="active" onclick="fnOpenFrametest()" class="aui-col-xs-4">
+
+                <i class="aui-iconfont aui-icon-star"></i>
+                <div class="aui-grid-label">安全</div>
+            </div>
+            <div tapmode="active" onclick="fnOpenarticle()" class="aui-col-xs-4">
+
+                <i class="aui-iconfont aui-icon-menu"></i>
+                <div class="aui-grid-label">信息</div>
+            </div>
+        </div>
+    </section>
+    <footer class="aui-bar aui-bar-tab aui-bg-info">
+      <h6 class="aui-text-white">规范管理 科学分析 精检细修 保障有力<br>
+      Copyright © 2018 - 2020 通号中心.All Rights Reserved.</h6>
+    </footer>
+    <!-- 列表布局 -->
+    <!-- <ul class="aui-list aui-list-in">
+            <li tapmode="active" onclick="fnOpenarticle()" class="aui-list-item">
+                <div  class="aui-list-item-inner">
+                    <div  class="aui-list-item-title">Item1</div>
+                </div>
+            </li>
+  </ul> -->
+    <!-- <footer class="aui-bar aui-bar-tab">
+        <div class="aui-bar-tab-item aui-active" onclick="fnOpenFrame()" tapmode>
+            <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-bar-tab-label">首页</div>
+        </div>
+        <div class="aui-bar-tab-item" onclick="fnOpensearch()" tapmode>
+            <i class="aui-iconfont aui-icon-star"></i>
+            <div class="aui-bar-tab-label">收藏</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+
+            <i class="aui-iconfont aui-icon-cart"></i>
+            <div class="aui-bar-tab-label">购物车</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+
+            <i class="aui-iconfont aui-icon-my"></i>
+            <div class="aui-bar-tab-label">我的</div>
+        </div>
+    </footer> -->
+
+</body>
+
+</html>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    // apiready=function(){
+    //   api.parseTapmode();
+    // }
+    //apiready = function(){   };
+    function fnOpenFrametest() {
+        api.openWin({
+            name: 'page1',
+            url: './pagetest_win.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+
+    function fnOpenFrame() {
+        api.openWin({
+            name: 'main1',
+            url: './main1.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+    }
+
+    function fnOpenarticle() {
+        var sca1 = api.require('pdfReader');
+        sca1.open({
+            path: 'widget://res/a1.pdf'
+        });
+    }
+
+    function fnOpensearch() {
+        api.openWin({
+            name: 'main2',
+            url: './main2.html',
+            // pageParam: {
+            //     name: 'main2'
+            // }
+        });
+    }
+</script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript">
+    var slide3 = new auiSlide({
+        container: document.getElementById("aui-slide3"),
+        // "width":300,
+        "height": 240,
+        "speed": 500,
+        "autoPlay": 3000, //自动播放
+        "loop": true,
+        "pageShow": true,
+        "pageStyle": 'dot',
+        'dotPosition': 'center'
+    })
+</script>

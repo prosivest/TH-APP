@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" style="padding-top:10px;">
+        <a class="aui-pull-left aui-btn" onclick="api.closeWin();">
+            <span class="aui-iconfont aui-icon-left"></span>返回
+        </a>
+        <div class="aui-title">Title</div>
+    </header>
+    <ul class="aui-list aui-list-in" onclick="fnOpenarticle()" tapmode>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-title">Item1</div>
+            </div>
+        </li>
+    </ul>
+    <ul class="aui-list aui-list-in">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner aui-list-item-arrow">
+                Item1
+            </div>
+        </li>
+    </ul>
+    <section class="aui-content-padded" onclick="fnOpenarticle()" tapmode>
+        <div class="aui-card-list">
+            <div class="aui-card-list-header">
+                卡片布局头部区域
+            </div>
+            <div class="aui-card-list-content-padded">
+                内容区域，卡片列表布局样式可以实现APP中常见的各类样式
+            </div>
+            <div class="aui-card-list-footer">
+                底部区域
+            </div>
+        </div>
+    </section>
+    <section class="aui-content" onclick="fnOpenarticle()" tapmode>
+        <div class="aui-card-list">
+            <div class="aui-card-list-header">
+                卡片布局头部区域
+            </div>
+            <div class="aui-card-list-content">
+                <img src="../image/12.png" />
+            </div>
+            <div class="aui-card-list-footer">
+                2016年7月12日
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    // apiready=function(){
+    //   api.parseTapmode();
+    // }
+    //apiready = function(){   };
+    function fnOpenFrametest() {
+        api.openWin({
+            name: 'test1',
+            url: './test.html',
+            // pageParam: {
+            //     name: 'test'
+            // }
+        });
+    }
+
+    function fnOpenFrame() {
+        api.openWin({
+            name: 'main1',
+            url: './main1.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+    }
+
+    function fnOpenarticle() {
+        var sca1 = api.require('pdfReader');
+        sca1.open({
+            path: 'widget://res/a1.pdf'
+        });
+    }
+
+    function fnOpensearch() {
+        api.openWin({
+            name: 'main2',
+            url: './main2.html',
+            // pageParam: {
+            //     name: 'main2'
+            // }
+        });
+    }
+</script>
